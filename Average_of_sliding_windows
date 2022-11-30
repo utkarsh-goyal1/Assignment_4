@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        ArrayList<Integer> list=new ArrayList<>();
+        while(true)
+        {
+            int a=sc.nextInt();
+            list.add(a);
+            if(a==-1){
+                break;
+            }
+        }
+        float sum=0;
+        float sum1=0;
+        int si=0;
+        int ei=0;
+        while(ei<list.size()-1)
+        {
+            while(ei-si>=n)
+            {
+                sum=sum-list.get(si);
+                si++;
+            }
+            sum=sum+list.get(ei);
+            System.out.printf("%.4f ",sum/(ei-si+1));
+            ei++;
+        }
+
+    }
+}
