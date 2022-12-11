@@ -1,0 +1,59 @@
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        int [][]A=new int[m][n];
+        ArrayList<Integer>List=new ArrayList<>();
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                A[i][j]=sc.nextInt();
+            }
+        }
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int count=0;
+        int [][]res=new int[r][c];
+        if(m*n!=r*c)
+        {
+            for(int i=0;i<m;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                    System.out.print(A[i][j]+" ");
+                }
+                System.out.println();
+            }   
+
+        }
+        else{
+           for(int i=0;i<m;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                    List.add(A[i][j]);
+                }
+               
+            }
+            for(int i=0;i<r;i++)
+            {
+                for(int j=0;j<c;j++)
+                {
+                    res[i][j]=List.get(count);
+                    count++;
+                }
+            }
+            for(int i=0;i<r;i++)
+            {
+                for(int j=0;j<c;j++)
+                {
+                    System.out.print(res[i][j]+" ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
